@@ -1,0 +1,12 @@
+textarea {
+  display: block;
+  width: 98%; /* Ширина поля в процентах */
+  height: 50px; /* Высота поля в пикселах */
+  resize: none;
+  margin: 10px auto;
+}
+
+.text-color {
+  width: 50px;
+  margin: 0 20px;
+}
