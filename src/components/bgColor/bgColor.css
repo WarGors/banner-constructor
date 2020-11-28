@@ -1,5 +1,18 @@
 .fill {
   width: 50px;
-  margin: 10px 20px;
-  
+  margin: 0px 40px;
+  cursor: pointer;  
+}
+
+[type="checkbox"] {
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.col-header {
+  display: block;
+}
+
+.bgc-container {
+  line-height: 2rem;
 }

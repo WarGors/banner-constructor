@@ -1,8 +1,8 @@
-import html2canvas from 'html2canvas'
 import { useRef, useState } from 'react'
-import Canvas2Image from '../../canvas2image'
 import BgColor from '../bgColor/bgColor'
-import ImagesList from '../imagesList'
+import Drawer from '../drawer/drawer'
+import Header from '../header/header'
+import ImagesList from '../imagesList/imagesList'
 import TextCreator from '../textCreator/textCreator'
 import './Form.css'
 
@@ -10,16 +10,24 @@ const Form = props => {
   const banner = useRef(null)
 
   const initialState = {
-    color: '#ff0000',
+    color: '#5AABD3',
     colorGradient: '#00FF9D',
     textColor: '#000000',
     text: '',
     img: null,
     gradientAngle: 0,
-    gradient: false
+    gradient: false,
+    isLoaded: false
   }
 
   const [state, setState] = useState(initialState)
+
+  const showDrawerHandler = item => {
+    navigator.clipboard.writeText(item)
+    if (state.isLoaded) return
+    setState(prevState => ({...prevState, isLoaded: true}))
+    setTimeout(() => setState(prevState => ({...prevState, isLoaded: false})), 1500)
+  }
 
   return (
     <>
@@ -39,30 +47,16 @@ const Form = props => {
             textColor={state.textColor}
           />
           <hr />
-          Выберите картину:
-          <ImagesList setState={setState}/>
-          <hr />
-          <button 
-            onClick={() => navigator.clipboard.writeText((banner.current.outerHTML))}
-          >
-            Скопировать баннер
-          </button>
-          <button 
-            onClick={() => navigator.clipboard.writeText((JSON.stringify(state)))}
-          >
-            Скопировать конфигурацию баннера
-          </button>
-          <button 
-            onClick={() => {
-              html2canvas(banner.current)
-                .then(canvas => Canvas2Image.saveAsPNG(canvas))
-            }}
-          >
-            Сохранить как картинку
-          </button>
+          <ImagesList setState={setState}/> 
         </form>
       </aside>
       <main>
+        <Header 
+          showDrawerHandler={showDrawerHandler}
+          state={state}
+          banner={banner}
+        />
+        <Drawer isLoaded={state.isLoaded} />
         {props.children({...state, banner})}
       </main>
     </>
@@ -70,7 +64,3 @@ const Form = props => {
 }
 
 export default Form
-
-
-
-

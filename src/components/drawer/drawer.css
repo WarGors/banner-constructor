@@ -1,0 +1,19 @@
+.drawer {
+  position: fixed;
+  right: 0;
+  top: 0;
+  left: 320px;
+  line-height: 50px;
+  box-sizing: border-box;
+  background: #fed40270;
+  transform: translateY(50px);
+  transition: transform 0.22s ease-in;
+  text-align: center;
+  font-weight: bold;
+  color:rgb(19, 8, 82)
+}
+
+.drawer.closed {
+  transform: translateY(-10px);
+  z-index: 0;
+}

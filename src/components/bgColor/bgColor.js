@@ -1,14 +1,24 @@
+// import sanitizeHtml from 'sanitize-html';
 import './bgColor.css'
 
 const BgColor = props => {
   return (
-    <div>
+    <div className='bgc-container'>
+      <strong className='col-header'>Настройте фон</strong>
       <input 
         type="checkbox" 
-        name="browser" 
         checked={props.gradient} 
         onChange={() => props.setState(prevState => ({...prevState, gradient: !prevState.gradient}))} 
-      /> Градиентная заливка<br />
+      />Включить градиентную заливку<br />
+      <div>Угол градиента: <input 
+        style={{width: '30px'}}  
+        type='text' 
+        value={props.gradientAngle}
+        disabled={!props.gradient}
+        onChange={e => {
+          props.setState(prevState => ({...prevState, gradientAngle: e.target.value}))
+        }} 
+      /> deg</div>
       {props.gradient ? 'Выберите цвета градиента: ' : 'Выберите цвет фона: '}<br />
       <input 
         className='fill'
@@ -26,13 +36,6 @@ const BgColor = props => {
           />
           : null
       }
-      <div>Угол градиента: <input 
-        style={{width: '30px'}}  
-        type='text' 
-        value={props.gradientAngle}
-        disabled={!props.gradient}
-        onChange={e => props.setState(prevState => ({...prevState, gradientAngle: e.target.value}))} 
-      /> deg</div>
     </div>
   )
 }

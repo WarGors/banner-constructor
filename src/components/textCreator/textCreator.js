@@ -1,9 +1,10 @@
+// import sanitizeHtml from 'sanitize-html';
 import './textCreator.css'
 
 const TextCreator = props => {
   return (
     <div>
-      Выберите цвет текста: 
+      <strong>Выберите цвет текста</strong>
       <input 
         className='text-color'
         type='color' 

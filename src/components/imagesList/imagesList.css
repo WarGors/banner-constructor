@@ -1,0 +1,8 @@
+.list-item-img {
+  list-style-type: none;
+  margin-bottom: 10px;
+  max-width: 200px;
+  background-color: rgba(82, 57, 57, 0.226);
+  cursor: pointer;
+  box-shadow: 1px 1px 5px rgba(5, 5, 5, 0.5);
+}

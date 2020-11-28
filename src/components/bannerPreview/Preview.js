@@ -7,7 +7,7 @@ const Prewiew = props => {
     : { backgroundColor: props.color }
   return (
     <div className='content'>
-      <div ref={props.banner} className='banner' style={backGround} id='banner'>
+      <div ref={props.banner} className='banner' style={backGround}>
         {props.img ? <img style={{marginTop: '40px'}} width='350px' src={props.img} alt=''/> : null}
         <div className='text-container' style={{color: props.textColor}}>{props.text}</div>
       </div>
@@ -16,3 +16,4 @@ const Prewiew = props => {
 }
 
 export default Prewiew
+
