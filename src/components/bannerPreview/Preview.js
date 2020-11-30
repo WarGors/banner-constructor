@@ -28,7 +28,7 @@ const Prewiew = props => {
       <div className='wrapper'> 
         <a href={props.link} ref={props.banner} style={{...bannerStyle, ...props.background}}>
           {props.img ? <img style={{marginTop: '40px', width: '350px'}} src={props.img} alt=''/> : null}
-          <div style={textContainerStyle}>{props.text}</div>
+          <div id={'text'} style={textContainerStyle}>{props.text}</div>
         </a>
       </div>
     </div>
