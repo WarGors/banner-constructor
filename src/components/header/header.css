@@ -1,6 +1,8 @@
 header {
-  position: relative;
-  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 320px;
   height: 50px;
   background: linear-gradient(90deg, #293039 60%, #1f0442);
   display: flex;
@@ -10,10 +12,10 @@ header {
   z-index: 50;
 }
 
-header button{
+header button {
   font-weight: bold;
   margin-right: 10px;
-  height: 30px;
+  min-height: 30px;
   border-radius: 50px;
   border: 2px solid white;
   background-color: rgba(255, 254, 254, 0);
@@ -31,4 +33,16 @@ header button:active {
   background-color: white;
   color: #1f0442;
   box-shadow: inset 3px 3px 1px rgba(5, 5, 5, 0.5);
+}
+
+header input {
+  margin-right: 15px;
+}
+
+.input-confirm {
+  border-right: 1px solid white;
+  margin-right: 20px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: flex-end;
 }

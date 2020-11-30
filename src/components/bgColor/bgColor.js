@@ -1,4 +1,3 @@
-// import sanitizeHtml from 'sanitize-html';
 import './bgColor.css'
 
 const BgColor = props => {
@@ -8,23 +7,21 @@ const BgColor = props => {
       <input 
         type="checkbox" 
         checked={props.gradient} 
-        onChange={() => props.setState(prevState => ({...prevState, gradient: !prevState.gradient}))} 
+        onChange={props.toggleGradient} 
       />Включить градиентную заливку<br />
       <div>Угол градиента: <input 
         style={{width: '30px'}}  
         type='text' 
         value={props.gradientAngle}
         disabled={!props.gradient}
-        onChange={e => {
-          props.setState(prevState => ({...prevState, gradientAngle: e.target.value}))
-        }} 
+        onChange={props.angleChangeHandler} 
       /> deg</div>
       {props.gradient ? 'Выберите цвета градиента: ' : 'Выберите цвет фона: '}<br />
       <input 
         className='fill'
         type='color' 
         value={props.color} 
-        onChange={e => props.setState(prevState => ({...prevState, color: e.target.value}))} 
+        onChange={props.colorChangeHandler} 
       />
       { 
         props.gradient 
@@ -32,7 +29,7 @@ const BgColor = props => {
             className='fill'
             type='color' 
             value={props.colorGradient} 
-            onChange={e => props.setState(prevState => ({...prevState, colorGradient: e.target.value}))} 
+            onChange={props.gradientChangeHandler} 
           />
           : null
       }

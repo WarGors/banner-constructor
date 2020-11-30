@@ -1,12 +1,9 @@
 import './App.css';
-import Prewiew from './components/bannerPreview/Preview';
-import Form from './components/form/Form';
+import BannerCreator from './components/bannerCreator/BannerCreator';
 
 function App() {
   return (
-    <Form>
-      {props => <Prewiew {...props} />}
-    </Form>  
+    <BannerCreator /> 
   );
 }
 

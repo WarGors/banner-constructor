@@ -2,22 +2,8 @@
   margin-left: 320px;
   display: flex;
   justify-content: center;
-
-}
-.banner {
-  background-color: blue;
-  margin-top: 65px;
-  width: 400px;
-  height: 500px;
-  text-align: center;
 }
 
-.text-container{
-  margin: 30px 40px;
-  font-size: 2.5em;
-  font-weight: bold;
-  height: 160px;
-  overflow: hidden;
-  word-wrap: break-word;
-  white-space: pre-wrap;
+.wrapper {
+  margin-top: 115px
 }

@@ -1,4 +1,3 @@
-// import sanitizeHtml from 'sanitize-html';
 import './textCreator.css'
 
 const TextCreator = props => {
@@ -9,15 +8,14 @@ const TextCreator = props => {
         className='text-color'
         type='color' 
         value={props.textColor} 
-        onChange={e => props.setState(prevState => ({...prevState, textColor: e.target.value}))} 
+        onChange={props.textColorChangeHandler} 
       /><br />
-      
+
       <textarea
-        placeholder={'Введите текст...'}  
-        id='text' 
+        placeholder={'Введите текст...'}   
         type='text' 
         value={props.text} 
-        onChange={e => props.setState(prevState => ({...prevState, text: e.target.value}))} 
+        onChange={props.textChangeHandler} 
       />
     </div>
     
