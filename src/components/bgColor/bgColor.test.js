@@ -1,5 +1,5 @@
-import { configure, shallow } from "enzyme"
-import Adapter from "enzyme-adapter-react-16"
+import Enzyme, { shallow } from "enzyme"
+import Adapter from "@wojtekmaj/enzyme-adapter-react-17"
 import BgColor from "./bgColor"
 
 let wrapper;
@@ -8,7 +8,7 @@ beforeEach(() => {
   wrapper = shallow(<BgColor />)
 })
 
-configure({
+Enzyme.configure({
   adapter: new Adapter()
 })
 

@@ -1,6 +1,6 @@
-import { configure, shallow } from "enzyme"
-import Adapter from "enzyme-adapter-react-16"
-import Prewiew from "./Preview";
+import Enzyme, { shallow } from "enzyme"
+import Adapter from "@wojtekmaj/enzyme-adapter-react-17"
+import Prewiew from "./Preview"
 
 let wrapper;
 
@@ -17,7 +17,7 @@ beforeEach(() => {
   wrapper.setProps(props)
 })
 
-configure({
+Enzyme.configure({
   adapter: new Adapter()
 })
 
