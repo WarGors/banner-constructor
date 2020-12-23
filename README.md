@@ -1,15 +1,19 @@
-# Getting Started with Create React App
+# Приложение-редактор, для создания баннеров
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Баннер создаётся из формы, которую можно заполнить на странице и сериализовать в json. Получившийся баннер можно экспортировать картинкой, а также как разметку.
 
-### `yarn start`
+### Приложение состоит из:
 
-Runs the app in the development mode.\
-Open [http://localhost:3999](http://localhost:3999) to view it in the browser.
+  • Превью баннера \
+  • Формы ввода параметров баннера \
+  • 3 кнопок экспорта: \
+    • сохранить картинку в png \
+    • скопировать баннер в буфер обмена, как html или jsx строку (на ваше усмотрение) \
+    • скопировать конфигурацию баннера в буфер обмена, как json строку
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Баннер может:
 
-### If you want to see tests use -> yarn add --dev @wojtekmaj/enzyme-adapter-react-17 -> yarn test (not npm)
-
-Launches the test runner in the interactive watch mode.\
+  • иметь иллюстрацию \
+  • отображать не более 3 строк текста \
+  • иметь заливку цветом (color или gradient) \
+  • при клике на баннер можно перейти по заданной ссылке (в случае с выгружаемой разметкой)
